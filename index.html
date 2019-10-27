@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <!-- Link to Normalize.css -->
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <!-- Link to Font Awesome -->
@@ -25,75 +26,83 @@
     <title>Reaction GIF Finder</title>
   </head>
   <body>
-    <div class="container">
-      <div class="jumbotron text-light bg-dark">
-        <h1 class="display-4">
-          <i class="fa fa-search" aria-hidden="true"></i> Reaction GIFF Finder
-        </h1>
-        <p class="lead">
-          A reaction gif finder, using GIPHY API - the largest GIF library in
-          the world.
-        </p>
-        <hr class="my-3" />
-        <p>
-          Here are some pre-defined search buttons.
-        </p>
-        <!-- TEMP BUTTONS HERE ONLY FOR STYLING AND LAYOT PLANNING -->
-        <a class="btn btn-primary btn-lg" href="#" role="button">LOL</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Shrug</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Dancing</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Yes</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">No</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Surprised</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">OMG</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Eye roll</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Wow</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Hello</a>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Bye</a>
-        <hr class="my-3" />
-        <p>
-            Add your own reaction search buttons.
-        </p>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="text" placeholder="your search button...">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-plus"></i> Add Search Button</button>
-        </form>
-    </div>
-      
-      <div class="card border-dark text-light">
-        <div class="card-header bg-dark">
-          <span><i class="fa fa-image"></i> GIF Results</span>
+    <div class="bg">
+      <div class="container">
+        <div class="jumbotron text-light bg-dark">
+          <h1 class="display-4 text-center">
+            <i class="fa fa-search" aria-hidden="true"></i> Reaction GIF Finder
+          </h1>
+          <p class="lead text-center">
+            A reaction gif finder, using GIPHY API - the largest GIF library in
+            the world.
+          </p>
+          <hr class="my-3" />
+          <p>
+            Here are some pre-defined search buttons.
+          </p>
+          <div id="pre-defined">
+            <button class="btn btn-success" id="displayed" data-search="LOL">
+              LOL
+            </button>
+            <button class="btn btn-success" id="displayed" data-search="WTF">
+              WTF
+            </button>
+            <button class="btn btn-success" id="displayed" data-search="WOW">
+              WOW
+            </button>
+          </div>
+          <hr class="my-3" />
+          <div id="fav-area">
+            <p>
+              <Span
+                ><i class="fa fa-heart"></i> Here are your favourite search
+                buttons.</Span
+              >
+            </p>
+            <div id="button-display"></div>
+
+            <hr class="my-3" />
+          </div>
+          <p>
+            <span
+              ><i class="fa fa-search-plus"></i> Add your own reaction search
+              buttons.</span
+            >
+          </p>
+          <form class="form-inline" id="new-button-form">
+            <input
+              class=""
+              type="text"
+              id="new-button-input"
+              placeholder="Button name..."
+            /><br />
+            <input
+              class="btn btn-outline-primary"
+              id="add-button"
+              type="submit"
+              value="Add Button"
+            />
+            <button class="btn btn-outline-warning" id="clear-favs">
+              Clear Favourite Buttons
+            </button>
+          </form>
         </div>
-        <div class="card-body" id="giff-results">
-                <div class="card">
-                        <img class="card-img-top" src="https://media0.giphy.com/media/ANbD1CCdA3iI8/200.webp?cid=790b7611b76f7e95e343d8f009760d3046b74783ac25c46e&rid=200.webp" alt="Card image cap">
-                        <div class="card-body">
-                          <h4 class="card-title">Card title</h4>
-                          <p class="card-rating">
-                            PG-13
-                          </p>
-                          <p class="card-hashtags">
-                                #fry #futurama #example #test
-                              </p>
-                        </div>
-                      </div>
+        <div class="border-dark text-light text-center">
+          <div class="card-header bg-dark">
+            <span><i class="fa fa-image"></i> GIF Results</span>
+          </div>
+          <div class="card border-dark text-light" id="giff-results"></div>
         </div>
       </div>
     </div>
-</div>
-<footer class="fixed-bottom text-center text-white bg-dark">
-    <small>Powered by Giphy API</small>
-
+    <footer class="fixed-bottom text-center text-white bg-dark">
+      <small>Powered by Giphy API</small>
     </footer>
   </body>
-  <!-- Script link for External javaScript -->
-  <script src="./assets/javascript/app.js"></script>
   <!-- Script link for jQuery -->
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"
-  ></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   <!-- Script link for Popper -->
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -106,4 +115,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"
   ></script>
+
+  <!-- Script link for External javaScript -->
+  <script src="./assets/javascript/app.js"></script>
 </html>

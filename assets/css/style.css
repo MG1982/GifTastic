@@ -1,9 +1,26 @@
+body {
+  height: 100%;
+  background-color: black;
+}
+.bg {
+  background-image: url("http://giphygifs.s3.amazonaws.com/media/lAqwNegAjH8mQ/giphy.gif");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 hr {
   background-color: red;
 }
 .btn {
   margin: 4px 2px;
 }
-.card-img-top {
-  width: 200px;
+.card {
+  padding: 5px;
+  display: inline-block;
+  margin: 5px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.card:hover {
+  cursor: pointer;
 }
