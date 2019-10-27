@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  //Array of search buttons
+  $("#results-container").hide();
 
   // Checks to see if the array exists in localStorage and is an array currently
   // If not, sets a local list variable to an empty array
@@ -45,6 +45,7 @@ $(document).ready(function() {
         gifDiv.append(gifDisplay);
         gifDiv.append(p);
         $("#giff-results").prepend(gifDiv);
+        $("#results-container").show();
       }
     });
   }

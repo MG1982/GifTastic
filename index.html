@@ -32,10 +32,11 @@
           <h1 class="display-4 text-center">
             <i class="fa fa-search" aria-hidden="true"></i> Reaction GIF Finder
           </h1>
-          <p class="lead text-center">
-            A reaction gif finder, using GIPHY API - the largest GIF library in
-            the world.
-          </p>
+            <p class="lead text-center">
+              A reaction gif finder, using GIPHY API - the largest GIF library
+              in the world.
+            </p></span
+          >
           <hr class="my-3" />
           <p>
             Here are some pre-defined search buttons.
@@ -86,17 +87,24 @@
               Clear Favourite Buttons
             </button>
           </form>
+          
         </div>
-        <div class="border-dark text-light text-center">
+        <div
+          class="container-fluid border-dark text-light text-center"
+          id="results-container"
+        >
           <div class="card-header bg-dark">
-            <span><i class="fa fa-image"></i> GIF Results</span>
+            <span><i class="fa fa-image"></i> GIF Search Results</span>
           </div>
-          <div class="card border-dark text-light" id="giff-results"></div>
+          <div
+            class="container-fluid border-dark text-light"
+            id="giff-results"
+          ></div>
         </div>
       </div>
     </div>
     <footer class="fixed-bottom text-center text-white bg-dark">
-      <small>Powered by Giphy API</small>
+      <small>Powered by        <img src="assets/images/giphy-white.png" alt="GIPHY API" width="150px"></small>
     </footer>
   </body>
   <!-- Script link for jQuery -->

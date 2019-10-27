@@ -4,9 +4,9 @@ body {
 }
 .bg {
   background-image: url("http://giphygifs.s3.amazonaws.com/media/lAqwNegAjH8mQ/giphy.gif");
-  height: 100%;
+  width: 100%;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
 }
 hr {
@@ -14,6 +14,10 @@ hr {
 }
 .btn {
   margin: 4px 2px;
+}
+.btn-outline-warning,
+.btn-outline-primary {
+  margin: 5px;
 }
 .card {
   padding: 5px;
@@ -23,4 +27,10 @@ hr {
 }
 .card:hover {
   cursor: pointer;
+}
+#results-container {
+  margin-bottom: 70px;
+}
+footer {
+  border-top: solid 1px red;
 }
