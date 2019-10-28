@@ -1,8 +1,8 @@
 $(document).ready(function() {
   $("#results-container").hide();
 
-  // Checks to see if the array exists in localStorage and is an array currently
-  // If not, sets a local list variable to an empty array
+  // Checks to see if the array exists in localStorage and is an array currently.
+  // If not, sets a local list variable to an empty array.
   // Otherwise favButtons is our current array.
   let searchButtonArray = JSON.parse(localStorage.getItem("favButtons"));
   if (!Array.isArray(searchButtonArray)) {
@@ -71,15 +71,16 @@ $(document).ready(function() {
   $("#clear-favs").on("click", function(event) {
     event.preventDefault();
     if (
-      confirm("Are you Sure you want to clear your favourite search buttons?")
+      window.localStorage.length > 0 &&
+      confirm("Are you sure you want to clear your favourite search buttons?")
     ) {
       $("#fav-area").hide();
       localStorage.clear();
       searchButtonArray = [];
       console.log(searchButtonArray);
       displayButtons();
-    } else {
-      // Do Nothing...
+    } else if (window.localStorage.length <= 0) {
+      alert("There are no favourite buttons to clear");
     }
   });
 
@@ -97,6 +98,8 @@ $(document).ready(function() {
   }
 
   displayButtons();
+  noBlankButton();
+  noClearButton();
 
   //Click event on button with id of "displayed" calls displayReactionGiffs function
   $(document).on("click", "#displayed", displayReactionGiffs);
@@ -114,5 +117,23 @@ $(document).ready(function() {
       $(this).attr("src", $(this).attr("data-still"));
       $(this).attr("data-state", "still");
     }
+  }
+  function noBlankButton() {
+    $("#add-button").hover(function() {
+      if ($("#new-button-input").val() == "") {
+        $(this).css("cursor", "not-allowed");
+      } else if ($("#new-button-input").val() !== "") {
+        $(this).css("cursor", "default");
+      }
+    });
+  }
+  function noClearButton() {
+    $("#clear-favs").hover(function() {
+      if (window.localStorage.length <= 0) {
+        $(this).css("cursor", "not-allowed");
+      } else {
+        $(this).css("cursor", "default");
+      }
+    });
   }
 });

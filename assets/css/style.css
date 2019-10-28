@@ -19,6 +19,9 @@ hr {
 .btn-outline-primary {
   margin: 5px;
 }
+#clear-favs:hover {
+  cursor: ;
+}
 .card {
   padding: 5px;
   display: inline-block;
@@ -33,4 +36,10 @@ hr {
 }
 footer {
   border-top: solid 1px red;
+}
+
+@media (max-width: 640px) {
+  .giff {
+    max-width: 200px;
+  }
 }
