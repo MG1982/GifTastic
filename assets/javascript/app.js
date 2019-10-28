@@ -123,7 +123,7 @@ $(document).ready(function() {
       if ($("#new-button-input").val() == "") {
         $(this).css("cursor", "not-allowed");
       } else if ($("#new-button-input").val() !== "") {
-        $(this).css("cursor", "default");
+        $(this).css("cursor", "pointer");
       }
     });
   }
@@ -132,7 +132,7 @@ $(document).ready(function() {
       if (window.localStorage.length <= 0) {
         $(this).css("cursor", "not-allowed");
       } else {
-        $(this).css("cursor", "default");
+        $(this).css("cursor", "pointer");
       }
     });
   }
