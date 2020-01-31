@@ -1,8 +1,6 @@
 # GifTastic
 
-## UWA Full Stack Flex - Week 6 Homework Assignment
-
-## Reaction GIF Finder - Powered by GIPHY API
+## A Reaction GIF Finder - Powered by GIPHY API
 
 ## Built With;
 
